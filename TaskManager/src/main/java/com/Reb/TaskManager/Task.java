@@ -15,8 +15,6 @@ public class Task {
     private String status;
     private LocalDateTime createdAt;
     
-
-
     public Task () {
     }
 
