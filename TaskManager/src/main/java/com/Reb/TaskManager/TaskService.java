@@ -29,4 +29,14 @@ public class TaskService {
     return task.orElseThrow(() -> new RuntimeException("Task not found"));
     }
 
+    public Task updateTask(Long id, Task updatedTask) 
+    {
+        Task existing = getTaskById(id);
+        existing.setTitle(updatedTask.getTitle());
+        existing.setDescription(updatedTask.getDescription());
+        existing.setStatus(updatedTask.getStatus());
+        return taskRepository.save(existing);
+    }
+
 }
+
